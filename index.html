@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>chocoPop</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/4dad057125.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  <div class="bodycontainer">
+    <header>      
+        <nav>
+          <img src="/logo.png" alt="Logo choco pop" id="logo">
+            <ul>
+              <li><a href="/index.html">Accueil</a></li>
+              <li><a href="/boutique.html">Boutique</a></li>
+              <li><a href="#"><span class="nbArticle">2 </span><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+          <div id="side-bar">
+            <ul class="barBurger">
+              <li><a href="/index.html">Accueil</a></li>
+              <li><a href="/boutique.html">Boutique</a></li>
+              <li><a href="#">Panier <span class="nbArticle">2 </span><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+          </div>
+            <div class="toggle-btn" id="btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="conteneur">
+              <div class="vertic"></div>
+              <div class="horiz"></div>
+            </div>
+      <div id="carouselImageChoco" class="carousel slide" data-ride="carousel">
+        <h1 class=" titre text-center">CHOCO PAP</h1>
+        
+        <ol class="carousel-indicators">
+          <li data-target="#carouselImageChoco" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselImageChoco" data-slide-to="1"></li>
+          <li data-target="#carouselImageChoco" data-slide-to="2"></li>
+        </ol>
+        <button class="boutique"><a href="/boutique.html"></a>Voir la boutique</button>
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <img src="/accueil2.jpg" class="d-block w-100" alt="Image 1">
+
+          </div>
+          <div class="carousel-item">
+            <img src="/accueil2.jpg" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="/accueil3.jpg" class="d-block w-100" alt="Image 3">
+          </div>
+        </div>
+          <a class="carousel-control-prev" href="#carouselImageChoco" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselImageChoco" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+          </a>
+      </div>
+      </header>
+      <section>
+        <div class="footer">
+          <div class="containerFooter">
+            <div class="chocoPop">
+              <h3>Choco Pap</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia fugiat at quia consequatur reiciendis obcaecati, perspiciatis repellat. Officia, deserunt pariatur?</p>
+            </div>
+            <div class="contact">
+              <h3>Contact</h3>
+              <p>Adresse : 51 rue du chocolat 75000 Paris</p>
+              <p>Téléphone : 01 23 42 67 89</p>
+              <p>Horaires : 9h00-17h00 du Lundi au Vendredi</p>
+            </div>
+            <div class="icone">
+              <img src="/pngegg (4).png">
+              <img src="/pngegg (3).png">
+              <img src="/pngegg (2).png">
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>    
+    <script src = "index.js"></script>
+</body>
+</html>
