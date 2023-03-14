@@ -26,7 +26,7 @@ result.innerHTML=
 <p>${chocolate.price} €</p>
 <p>Note : ${chocolate.note}</p>
 <button>Ajouter au panier</button>
-</li>`);
+</li>`).join("");
 
 }  
 fetchChocolate();
