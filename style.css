@@ -169,8 +169,16 @@ img {
     margin-top: 50px;
     font-size:3em;
 }
+
 }
 @media only screen and (max-width: 800px) {
+    .containerSearch{
+        background: #1F1615;
+position:fixed;
+left : 0px;
+width : 100%;
+top : 0px;
+    }
     .bodycontainer{
         margin: 0px;
      }
@@ -254,6 +262,14 @@ img {
             text-decoration: none;
             color: #FFD543;
         }
+        .containerSearch{
+            background: #1F1615;
+position:fixed;
+left : 0px;
+width : 100%;
+top : 0px;
+        }
+
     }
 /*****************************************************************************************************/
     /*Mise en forme de la page boutique*/
@@ -262,20 +278,26 @@ h1{
     text-align: center;
     color: #FFD543;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3em;
 }
+
 .card{
+    flex : 1 0 20%;
+    list-style-type: none;
     width: 300px;
     height: auto;
     text-align: center;
     margin: auto;
     border: none;
-    align-items: center;
-    flex-basis : 22%;
-    padding: 20px;
+    padding: 50px 20px 80px 20px;
+    text-decoration: none;
 }
 .card img{
 width: 250px;
-height: 150px;}
+height: 150px;
+object-fit: cover;
+}
 
 .card button{
     width: 150px;
@@ -286,9 +308,15 @@ height: 150px;}
     text-align: center;
 }
 .containerChocolate{
+    min-height: 800px;
     background:rgb(255, 255, 255);
     position: relative;
 
+}
+.displayProduct{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
 }
 #result{
     display: flex;
@@ -305,21 +333,32 @@ h2{
     /*Mise en forme du filtre*/
 /*****************************************************************************************************/
 .containerSearch {
+    min-width: 200px;
     position: absolute;
+    width : 20%;
     top : 150px;
     left : -40px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border : solid 1px var(--choco);
     border-radius: 13px 13px 10px 10px;
+    font-size: 1.2em;
 }
 .searchTitle{
     background: #664733;
     border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    margin: 0;padding: 30px;
+    font-size: 2em;
+    color : var(--yellow);
 }
 .inputSearch{
     padding: 20px;
     background: rgb(191, 153, 119);
     border-radius: 0px 0px 9px 10px;
+}
+.containerSearch h3{
+    font-size: 1.5em;
+    padding: 10px 0px;
 }
 
 /*****************************************************************************************************/
