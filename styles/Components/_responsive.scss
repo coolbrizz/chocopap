@@ -1,0 +1,115 @@
+@media only screen and (min-width: 1500px) {
+    .bodycontainer{
+       margin: 30px 130px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+.titre{
+    margin-top: 50px;
+    font-size:3em;
+    z-index: 3;
+}
+.containerChocolate{
+  padding-top: 50px;
+}
+
+}
+@media only screen and (max-width: 800px) {
+
+    .containerSearch{
+        left : 0px;
+        width : 100%;
+        top : 0px;
+    }
+    .bodycontainer{
+        margin: 0px;
+     }
+     .containerFooter{
+        display: block;
+           }
+           .chocoPop{
+            padding: 0px;
+        }
+        .boutique{
+            font-size: 1.2em;
+            margin-top: 400px;
+        }
+        #carouselImageChoco {
+            height: 500px;
+        }
+        img {height: 500px;}
+                /*****************************************************************************************************/
+                                            /*Mise en forme du menu burger*/
+                /*****************************************************************************************************/
+        nav ul{
+            display: none;
+        }
+        #side-bar {
+            visibility: visible;
+            display: none;
+            width: 100%;
+            height: 150px;
+            background :var(--lightchoco);
+             transition: 0.5s ease-out;
+            z-index: 4;
+          }
+          .toggle-btn {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+          }
+          .toggle-btn span {
+            width: 40px;
+            height: 5px;           
+             border-radius: 5px;
+            background :#FFD543;
+            display: block;
+            margin-top: 5px;
+          }
+          #conteneur {
+            visibility: hidden;
+            cursor: pointer;
+          }
+          .vertic {
+            position: absolute;
+            height: 5px;
+            width: 40px;
+            border-radius: 5px;
+            background : var(--yellow);
+            transform: rotate(45deg);
+            top: 50px;
+            right: 20px;
+
+          }
+          .horiz {
+            position: absolute;
+            height: 5px;
+            width: 40px;
+            border-radius: 5px;
+            background : var(--yellow);
+            transform: rotate(-45deg);
+            top: 50px;
+            right: 20px;
+
+          }
+          .barBurger a{
+            color: #2C1E1E;
+            font-size: 2em;
+            padding: 10px;
+        }
+        .barBurger a:hover{
+            text-decoration: none;
+            color: #FFD543;
+        }
+        .containerSearch{
+            background: #1F1615;
+position:fixed;
+left : 0px;
+width : 100%;
+top : 0px;
+        }
+
+    }

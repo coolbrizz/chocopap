@@ -1,0 +1,113 @@
+.cardbasket{
+    visibility: visible;
+transition:  0.2s ease-in;
+    height: 900px;
+    width: 400px;
+    background: white;
+    position: absolute;
+    right: 0px;top: 0;
+    z-index: 2;
+    border : solid 3px var(--choco);
+    border-right: none;
+    .entetePanier{
+        background: var(--choco);
+        font-size: 1.3em;
+    }
+    .closePanier{
+        font-size: 20px;
+        margin: 5px;
+        padding: 5px;
+    }
+    h1{
+        font-size: 1.5em;
+        padding: 5px 0px 20px 0px;
+    }
+    .articles{
+        padding-top: 15px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        margin: 0;
+;}
+    h2{
+        font-size: 1.1em;
+        margin-left: 20px;
+    }
+    h3{
+        font-size: 1.1em;
+
+        margin-left: 20px;
+    }
+    span{
+        font-size: 40px;
+        padding: 15px;
+        cursor: pointer;
+        color: red;
+    }
+    input{
+        margin: 10px;
+        font-size: 12px;
+        padding: 8px;
+        height: 5px;width: 50px;
+        margin-left: 20px;
+    }
+    p{
+        margin-left: 20px;
+        width: 50px;
+    }
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: visible;
+      }
+    img{
+        height: 60px;
+        width: 60px;
+        margin: auto;
+        margin-left: 20px;
+    }
+    .footerPanier{
+        position: absolute;
+        background: var(--lightchoco);
+        font-size: 2em;
+        padding: 30px;
+        color: var(--yellow);
+        text-align: right;
+        bottom: 0px;
+        width: 398px;
+        border-top: solid 2px var(--choco);
+        .bouton{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: auto;
+            padding-top: 10px;
+            align-items: center;
+            button{
+                padding: 5px;
+                background: var(--choco);
+                color: var(--yellow);
+                margin: 10px;
+                border-radius: 5px;
+                width: 300px;
+                font-size: 0.5em;
+        }
+        }
+    }
+    .total{
+            color: var(--yellow);
+            font-size: 1em;            
+    }
+}
+.cardarticles{
+    display: flex;
+    width: 300px;
+    align-items: flex-start;
+    text-align: center;
+
+    }
+    span{
+        margin: auto;
+    }
+#articles{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,42 @@
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+input[type=checkbox] {
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    border: 1px solid var(--choco);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--choco);
+    margin:0px;
+    position: relative;
+
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+input[type=range] {
+    border-radius: 4px;
+    height: 20px;
+    width: 50px;
+    background: #fff;
+    border: 1px solid var(--choco);
+
+}
+select {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    outline: 0;
+    background: var(--choco);
+    color: #fff;
+    padding: 3px;
+    border-radius: 9px;
+    margin-left: 10px;
+  }
