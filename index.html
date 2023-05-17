@@ -6,67 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>chocoPop</title>
-    <link rel="stylesheet" href="/styles/index.css">
     <script src="https://kit.fontawesome.com/4dad057125.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
   <div class="bodycontainer">
     <header>      
-        <nav>
+        <nav >
           <img src="/logo.png" alt="Logo choco pop" id="logo">
-            <ul>
+          <div class="titre">Chocopap</div>
+            <ul class="header">
               <li><a href="/index.html">Accueil</a></li>
               <li><a href="/boutique.html">Boutique</a></li>
-              <li><a href="#"><span class="nbArticle">2 </span><i class="fa-solid fa-cart-shopping"></i></a></li>
+              <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
-        </nav>
-          <!-- <div id="side-bar">
-            <ul class="barBurger">
-              <li><a href="/index.html">Accueil</a></li>
-              <li><a href="/boutique.html">Boutique</a></li>
-              <li><a href="#">Panier <span class="nbArticle">2 </span><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-          </div>
-            <div class="toggle-btn" id="btn">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="burger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
             </div>
-            <div id="conteneur">
-              <div class="vertic"></div>
-              <div class="horiz"></div>
-            </div>  -->
-       <div id="carrousel" class="carousel slide" data-ride="carousel">
-         <h1 class=" titre text-center">CHOCO PAP</h1>
-        
-        <ol class="carousel-indicators">
-          <li data-target="#carouselImageChoco" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselImageChoco" data-slide-to="1"></li>
-          <li data-target="#carouselImageChoco" data-slide-to="2"></li>
-        </ol> 
-          <div class="carousel-inner" role="listbox">
-
-          <div class="carousel-item active">
-            <img src="/images/table_2270684.png" class="d-block w-100" alt="Image 1">
-
+        </nav>
+        <nav class="navbar">
+          <ul class="menu">
+            <li><a href="/index.html">Accueil</a></li>
+            <li><a href="/boutique.html">Boutique</a></li>
+            <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+          </ul>
+        </nav>
+            <div id="carousel-container">
+              <button class="lienBoutique"><a href="/boutique.html">Boutique</a></button>
+              <div id="controls1">
+                <button onclick="previous()" class="prev"><i class="previous fa-solid fa-arrow-left"></i></button>
+              </div>
+              <div id="controls2">
+                <button onclick="next()" class="next"><i class="nextious fa-solid fa-arrow-right"></i></button>
+            </div>
+              <div class="carouselContent">
+                        <div class="carouselContentImage">
+                          <img src="/images/table_2270684.png"/>
+                        </div>
+                        <div class="carouselContentImage">     
+                          <img src="/images/DALL·E 2023-05-01 07.17.35 - multiple delicious chocolate on a wood table.png">
+                        </div>
+                        <div class="carouselContentImage">
+                          <img src="/accueil3.jpg"/>
+                        </div>
+                      </div>
           </div>
-          <div class="carousel-item">
-            <img src="/accueil2.jpg" class="d-block w-100" alt="Image 2">
-          </div>
-          <div class="carousel-item">
-            <img src="/accueil3.jpg" class="d-block w-100" alt="Image 3">
-          </div>
-
-          <a class="carousel-control-prev" href="#carouselImageChoco" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only"></span>
-          </a>
-          <a class="carousel-control-next" href="#carouselImageChoco" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only"></span>
-          </a>
-      </div>
       </header>
       <section>
         <div class="footer">
@@ -90,6 +76,7 @@
         </div>
       </section>
   </div>    
-    <script src = "index.js"></script>
+    <script src="carroussel.js"></script>
+    <script src="menuBurger.js"></script>
 </body>
 </html>

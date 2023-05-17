@@ -15,7 +15,17 @@
 
 }
 @media only screen and (max-width: 800px) {
-
+  
+  .titre{
+top : 150px;
+  }
+#carousel-container{
+  height: 400px;
+  .carouselContent{
+    height: 400px;
+    .carouselContentImage{height: 400px;}
+  }
+}
     .containerSearch{
         left : 0px;
         width : 100%;
@@ -30,86 +40,42 @@
            .chocoPop{
             padding: 0px;
         }
-        .boutique{
-            font-size: 1.2em;
-            margin-top: 400px;
-        }
-        #carouselImageChoco {
-            height: 500px;
-        }
-        img {height: 500px;}
+
                 /*****************************************************************************************************/
                                             /*Mise en forme du menu burger*/
                 /*****************************************************************************************************/
-        nav ul{
+        .header{
             display: none;
         }
-        #side-bar {
-            visibility: visible;
-            display: none;
-            width: 100%;
-            height: 150px;
-            background :var(--lightchoco);
-             transition: 0.5s ease-out;
-            z-index: 4;
-          }
-          .toggle-btn {
-            position: absolute;
-            top: 50px;
-            right: 20px;
-            cursor: pointer;
-            height: 50px;
-            width: 50px;
-          }
-          .toggle-btn span {
-            width: 40px;
-            height: 5px;           
-             border-radius: 5px;
-            background :#FFD543;
-            display: block;
-            margin-top: 5px;
-          }
-          #conteneur {
-            visibility: hidden;
-            cursor: pointer;
-          }
-          .vertic {
-            position: absolute;
-            height: 5px;
-            width: 40px;
-            border-radius: 5px;
-            background : var(--yellow);
-            transform: rotate(45deg);
-            top: 50px;
-            right: 20px;
-
-          }
-          .horiz {
-            position: absolute;
-            height: 5px;
-            width: 40px;
-            border-radius: 5px;
-            background : var(--yellow);
-            transform: rotate(-45deg);
-            top: 50px;
-            right: 20px;
-
-          }
-          .barBurger a{
-            color: #2C1E1E;
-            font-size: 2em;
-            padding: 10px;
+        .bodycontainer{border-radius: none;}
+        .burger-menu{display: block;}
+.navbar.active{
+  display: block;
+  z-index: 5
+  ;
+}
+        .menu.active {
+          display: flex; /* Affiche le menu principal lorsque le menu burger est activé */
+          flex-direction: column;
+          background-color: var(--yellow);
+          position: absolute;
+          top : 0%;
+          left: 0;
+          width: 100%;
         }
-        .barBurger a:hover{
-            text-decoration: none;
-            color: #FFD543;
+      
+        .menu.active li {
+          margin-right: 0;
+
+          text-align: center;
         }
+      }
         .containerSearch{
             background: #1F1615;
-position:fixed;
-left : 0px;
-width : 100%;
-top : 0px;
+            border-radius: none;
+            left : 0px;
+            width : 100%;
+            top : 0px;
         }
 
-    }
+    

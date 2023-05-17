@@ -12,32 +12,27 @@
 </head>
 <body>
   <div class="bodycontainer">
-    <header>
-      
-            <nav>
-                <img src="/logo.png" alt="Logo choco pop" id="logo">
-                <ul>
-                    <li><a href="/index.html">Accueil</a></li>
-                    <li><a href="/boutique.html">Boutique</a></li>
-                    <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-            </nav>
-            <!-- <div id="side-bar">
-                <ul class="barBurger">
-                    <li><a href="/index.html">Accueil</a></li>
-                    <li><a href="/boutique.html">Boutique</a></li>
-                    <li><a href="#">Panier <span class="nbArticle">2 </span><i class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-              </div>
-            <div class="toggle-btn" id="btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div id="conteneur">
-              <div class="vertic"></div>
-              <div class="horiz"></div>
-            </div>     -->
+    <header>      
+      <nav >
+        <img src="/logo.png" alt="Logo choco pop" id="logo">
+          <ul class="header">
+            <li><a href="/index.html">Accueil</a></li>
+            <li><a href="/boutique.html">Boutique</a></li>
+            <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+          </ul>
+          <div class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+      </nav>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/boutique.html">Boutique</a></li>
+          <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+      </nav>
       </header>
         <section>
 <div class="containerChocolate">
@@ -54,7 +49,7 @@
                       <input type="checkbox" 
                       id="tous" 
                       value="tous" 
-                      
+                    >
                       </input>
                       <span>Tous</span>
                       </label>
@@ -124,7 +119,7 @@
               <div class='range-container'>
                       <form action="#">
                               <label>Prix mini :</label>
-                              <select name="Price" id="price">
+                              <select name="Price" id="pricedown">
                               <option value="mini">Mini</option>
                               <option value="2">2€</option>
                               <option value="3">3€</option>
@@ -135,12 +130,29 @@
                               <option value="8">8€</option>
                               <option value="9">9€</option>
                               <option value="10">10€</option>
+                              <option value="11">11€</option>
+                              <option value="12">12€</option>
+                              <option value="13">13€</option>
+                              <option value="14">14€</option>
+                              <option value="15">15€</option>
+                              <option value="16">16€</option>
+                              <option value="17">17€</option>
+                              <option value="18">18€</option>
+                              <option value="19">19€</option>
+                              <option value="20">20€</option>
                               </select>
                       </form>
                       <form action="#">
                           <label>Prix maxi :</label>
-                          <select name="Price" id="price">
-                          <option value="maxi">maxi</option>
+                          <select name="Price" id="priceup">
+                          <option value="3">maxi</option>
+                          <option value="4">4€</option>
+                              <option value="5">5€</option>
+                              <option value="6">6€</option>
+                              <option value="7">7€</option>
+                              <option value="8">8€</option>
+                              <option value="9">9€</option>
+                              <option value="10">10€</option>
                           <option value="11">11€</option>
                           <option value="12">12€</option>
                           <option value="13">13€</option>
@@ -159,16 +171,17 @@
                       <form action="#">
                         <label >Note mini :</label>
                         <select name="noteMini" id="noteMini">
-                          <option value="noteMini">mini</option>
+                          <option value="1">mini</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
+                          <option value="5">5</option>
                         </select>
                       </form>
                       <form action="#">
                         <label >Note maxi :</label>
                         <select name="noteMaxi" id="noteMaxi">
-                          <option value="Nmaxi">maxi</option>
+                          <option value="2">maxi</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
                           <option value="5">5</option>
@@ -189,7 +202,7 @@
             </ul>
           </div>     
           <div class="footerPanier">
-              <h2>Montant :<span class='total'> 10€</span></h2>
+              <h2>Montant :<span class='total'>0 €</span></h2>
               <div class="bouton">
           <button class='valide'>Valider le panier</button>
               <button class='empty'>Réinitialiser le panier</button>
@@ -223,5 +236,6 @@
     </footer>
   </div>    
     <script src = "index.js"></script>
+    <script src = "menuBurger.js"></script>
 </body>
 </html>

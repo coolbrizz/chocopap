@@ -1,5 +1,5 @@
 .cardbasket{
-    visibility: visible;
+    visibility: hidden;
 transition:  0.2s ease-in;
     height: 900px;
     width: 400px;
@@ -27,7 +27,7 @@ transition:  0.2s ease-in;
         display: flex;
         text-align: center;
         align-items: center;
-        margin: 0;
+
 ;}
     h2{
         font-size: 1.1em;
@@ -35,34 +35,20 @@ transition:  0.2s ease-in;
     }
     h3{
         font-size: 1.1em;
-
-        margin-left: 20px;
     }
     span{
         font-size: 40px;
-        padding: 15px;
         cursor: pointer;
         color: red;
+        
     }
-    input{
-        margin: 10px;
-        font-size: 12px;
-        padding: 8px;
-        height: 5px;width: 50px;
-        margin-left: 20px;
+    .qty{
+width: 30px;
+        padding: 10px;
     }
-    p{
-        margin-left: 20px;
-        width: 50px;
-    }
-    input[type=number]::-webkit-inner-spin-button {
-        -webkit-appearance: visible;
-      }
     img{
         height: 60px;
         width: 60px;
-        margin: auto;
-        margin-left: 20px;
     }
     .footerPanier{
         position: absolute;
@@ -98,16 +84,38 @@ transition:  0.2s ease-in;
     }
 }
 .cardarticles{
+    padding-left: 10px;
+padding-top: 10px;
     display: flex;
-    width: 300px;
-    align-items: flex-start;
+    flex-direction: row;
+    width: 400px;
+    align-items: center;
     text-align: center;
+    .sousCardArticles{
+        width: 150px;
+    }
+    .plus, .moins{
+        border: outset 1px red;
+        font-size: 15px;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
 
+
+    &:hover{
+        background: red;
+        color : white;
+    }
+}
     }
     span{
-        margin: auto;
+text-align: center;
+        margin: 5px;
+        margin-left: 10px;
+        transform: translateY(-12px);
     }
 #articles{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
