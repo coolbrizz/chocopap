@@ -82,6 +82,7 @@ max-height: 150px;
 .burger-menu{
     display: none;
     cursor: pointer;
+
     .bar{
         width: 50px;
         height: 8px;
@@ -92,13 +93,15 @@ max-height: 150px;
     }
 }
     .navbar{
-        display: flex;align-items: center;display: none;
-
-
+display: none;height: 206px;
         .menu {
             display: flex;
             list-style-type: none;        
                 display: none; 
+                a:hover, i:hover{
+                    color: var(--orange);
+                }
+
           }
           
           .menu li {

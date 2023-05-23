@@ -10,7 +10,7 @@ h1{
     background: white;
 }
 .card{
-    flex : 1 0 20%;
+
     list-style-type: none;
     height: auto;
     text-align: center;
@@ -25,20 +25,21 @@ h1{
 width: 150px;
 height: 100px;
 margin: auto;
-
+cursor: pointer;
 }
 
 .card button{
     width: 150px;
-
     border-radius: 10px;
     border: solid 1px var(--orange);
     background: var(--lightchoco);
     padding: 5px;
     text-align: center;
     margin: auto;
-
-
+    &:hover{
+        background: var(--choco);
+        color : var(--lightchoco);
+    }
 }
 
 .containerChocolate{

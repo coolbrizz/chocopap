@@ -1,0 +1,66 @@
+.bodycontainerproduct{
+    .produits{
+        background: white;
+    }
+    .description{
+        padding: 100px 100px 100px 200px;
+
+        .descriptionProduits{
+            display: flex;
+            flex-direction: row;
+
+        img{
+            height: 300px;
+            width: auto;
+            max-width: 400px;
+            padding-right: 50px;
+        }
+        .descriptionSupp{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .containerQte{
+                display: flex;
+                align-items: flex-start
+            }
+            button{
+                width: 150px;
+                border-radius: 10px;
+                border: solid 1px var(--orange);
+                background: var(--lightchoco);
+                padding: 5px;
+                text-align: center;
+                margin: auto;
+                margin-top: 20px;
+                &:hover{
+                    background: var(--choco);
+                    color : var(--lightchoco);
+                }
+            }
+            p{
+                padding: 5px;
+            }
+            .plus, .moins{
+                cursor: pointer;
+                border: solid 1px var(--choco);
+                background: var(--lightchoco);
+                border-radius: 50px;
+                font-size: 15px;
+                height: 25px;
+                width: 25px;
+                padding-left: 5px;
+            &:hover{
+                background: var(--choco);
+                color : var(--lightchoco);
+            }
+            }
+
+        }
+    }}
+    .ingredients{
+        display: flex;flex-direction: column;padding-top: 50px;
+      }  }
+      h2{
+        text-transform: uppercase;
+        color: var(--lightchoco);
+                    }

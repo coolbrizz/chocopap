@@ -1,16 +1,27 @@
-const nbArticles = document.querySelector('.nbArticle')
-const result = document.getElementById('result')
-const articles = document.getElementById('articles')
-const empty = document.querySelector('.empty')
-const closePanier = document.querySelector('.closePanier')
-const cardbasket = document.querySelector('.cardbasket')
-const panier = document.querySelector('.fa-solid')
-const valide = document.querySelector('.valide')
-const totalPanier = document.querySelector('.total')
-const corps = document.querySelector('.containerChocolate')
-let dataChocolate = []; 
-let nombreArticles="";
-let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+//Appel du fichier JSON
+async function fetchChocolate(){
+  await fetch ("products.json")
+    .then((res)=>res.json())
+    .then((data)=>(dataChocolate = data));
+    chocolateDisplay();
+    panierDisplay();
+    nombreArticle();
+    }
+
+//Adaptation du filtre en responsive
+function openCategories(){
+openCategoryElement.classList.toggle('active');
+openCategory.classList.toggle('active');
+}
+function openPrice(){
+  openCategoryPrice.classList.toggle('active');
+  openPrices.classList.toggle('active');
+}
+function openNote(){
+  openCategoryNote.classList.toggle('active');
+  openNotes.classList.toggle('active');
+}
+
 
 //Constante pour le filtre 
 const checkboxTous = document.querySelector('#tous');
@@ -28,7 +39,7 @@ const miniPrice= document.querySelector('#pricedown');
 const maxiPrice = document.querySelector('#priceup');
 checkboxTous.checked = true;
 
-// // Ecouteur d'événement pour le filtre Prix
+// Ecouteur d'événement pour le filtre Prix
 let selectedMiniPrice = 2;
 let selectedMaxiPrice = 20;
 miniPrice.addEventListener("change", () => {selectedMiniPrice = miniPrice.value;chocolateDisplay()});
@@ -46,7 +57,7 @@ maxiNotes.addEventListener("change", () => {selectedMaxiNotes = maxiNotes.value;
   checkboxLait.checked=false;  checkboxNoir.checked=false;  checkboxNoix.checked=false;  checkboxFruit.checked=false;
   checkboxCaramel.checked=false;  checkboxLiqueur.checked=false;
     chocolateDisplay();
-    console.log(checkboxTous.checked)});
+  });
   checkboxBlanc.addEventListener('change', () => {
     checkboxTous.checked = false;
     checkboxBlanc.checked;
@@ -75,68 +86,8 @@ maxiNotes.addEventListener("change", () => {selectedMaxiNotes = maxiNotes.value;
     checkboxLiqueur.checked;
     checkboxTous.checked = false;
     chocolateDisplay()});
-console.log(cartItems)
-//Appel du fichier JSON
-async function fetchChocolate(){
-  await fetch ("products.json")
-    .then((res)=>res.json())
-    .then((data)=>(dataChocolate = data));
-    chocolateDisplay();
-    panierDisplay();
-    nombreArticle();
-    }
 
-//affiche le nombre d'article dans la navigation
-function nombreArticle(){
-  nombreArticles = cartItems.length;
-  nbArticles.innerHTML = nombreArticles;
-}
 
-function panierDisplay(){
-  articles.innerHTML = cartItems.map((items, index) => {        
-    return `<li class="cardarticles">
-    <span class='closePanier'>X</span>
-    <img src=/${items.image} alt="photo${items.image}">
-    <div class="sousCardArticles">
-      <h3> ${items.title}</h3>
-      <p>${items.price} €</p>
-    </div>
-    <p class="qty">${items.quantity}</p>
-    <span class="plus" data-index="${index}"> + </span><span class="moins" data-index="${index}"> - </span>
-    `
-  }).join("");
-  const plus = document.querySelectorAll(".plus");
-  const moins = document.querySelectorAll(".moins");
-  const closePanier = document.querySelectorAll('.closePanier');
-
-  closePanier.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      removeToCart(index-1);
-    });
-  });
- 
-  plus.forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = button.dataset.index;
-      cartItems[index].quantity++;
-      panierDisplay();
-      calculTotal(index);
-    });
-  });
-
-  moins.forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = button.dataset.index;
-      if (cartItems[index].quantity > 0 ){
-      cartItems[index].quantity--;
-      panierDisplay();
-      calculTotal(index)
-    }else{
-      removeToCart(index)
-      }
-    });
-  });
-}
 
     function chocolateDisplay() {
       let noteStars = "";
@@ -215,14 +166,22 @@ function panierDisplay(){
         }
         //affichage du map des chocolats
         return `<li class="card">
-          <img src=/${chocolate.image} alt="photo${chocolate.image}">
-          <h2> ${chocolate.title}</h2>
+          <img src=/${chocolate.image} alt="photo${chocolate.image}" class="imageCard" data-id="${chocolate.id}" onclick="openProduitsPage()" >
+          <h2 onclick="openProduitsPage()"> ${chocolate.title}</h2>
           <p>${chocolate.price} €</p>
           <p>Note : ${noteStars}</p>
           <button class="addpanier">Ajouter au panier</button>
-        </li>`;      
+        </li>`;     
+
       }).join("");
 
+      const imageCarte = document.querySelectorAll('.imageCard')
+      imageCarte.forEach((image) => {
+      image.addEventListener("click",(e) => {
+      productId = e.target.getAttribute("data-id");
+      ajouterIdProduit(productId);
+      })
+    })
       // Fonction ajouter au panier
       const addPanier = document.querySelectorAll('.addpanier');
       addPanier.forEach((button, index) => {
@@ -232,7 +191,59 @@ function panierDisplay(){
       });
 
     }
+// affiche le nombre d'article dans la navigation
+function nombreArticle(){
+ nombreArticles = cartItems.length;
+  nbArticles.innerHTML = nombreArticles;
+}
+function ajouterIdProduit(productId){
+sessionStorage.setItem("productId", productId)
+}
+function panierDisplay(){
+  articles.innerHTML = cartItems.map((items, index) => {        
+    return `<li class="cardarticles">
+    <span class='enleverProduit'>X</span>
+    <img src=/${items.image} alt="photo${items.image}">
+    <div class="sousCardArticles">
+      <h3> ${items.title}</h3>
+      <p>${items.price} €</p>
+    </div>
+    <p class="qty">${items.quantity}</p>
+    <span class="plus" data-index="${index}">+</span><span class="moins" data-index="${index}"> - </span>
+    `
+  }).join("");
+  const plus = document.querySelectorAll(".plus");
+  const moins = document.querySelectorAll(".moins");
+  const closePanier = document.querySelectorAll('.closePanier');
+  const enleverProduits = document.querySelectorAll('.enleverProduit')
 
+  enleverProduits.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      removeToCart(index);
+    });
+  });
+  plus.forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = button.dataset.index;
+      cartItems[index].quantity++;
+      panierDisplay();
+      calculTotal(index);
+    });
+  });
+
+  moins.forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = button.dataset.index;
+      if (cartItems[index].quantity > 0 ){
+      cartItems[index].quantity--;
+      panierDisplay();
+      calculTotal(index)
+    }else{
+      removeToCart(index)
+      }
+    });
+  });
+}
 function addToCart(index) {
   let item = {
     id: dataChocolate[index].id,
@@ -276,7 +287,7 @@ function calculTotal() {
   totalPanier.innerHTML = total.toFixed(2) + " €";
 }
 
-//Bouton reinitialiser le panier
+// Bouton reinitialiser le panier
 empty.addEventListener("click", () => {
 localStorage.clear();
 nombreArticle();
@@ -285,17 +296,24 @@ location.reload();
 cardbasket.style.visibility = "visible";
 })
 // Fermer le panier
-closePanier.addEventListener("click" ,() => {
-cardbasket.style.visibility = "hidden";
-} )
+function fermerPanier(){
+  cardbasket.classList.toggle('active');
+  }
 // Ouvrir le panier
-panier.addEventListener("click" ,() => {
-  cardbasket.style.visibility = "visible";
-  } )
+function ouvrirPanier(){
+  cardbasket.classList.toggle('active');
+  calculTotal();
+  }
   //validation du panier
   valide.addEventListener("click" , () => {
     alert("Vous venez de valider votre panier! Veuillez procéder au paiement.")
   })
+
+function openProduitsPage(){
+
+  window.location.href="/produits.html";
+
+}
 
   fetchChocolate();
 

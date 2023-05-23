@@ -18,7 +18,7 @@
             <ul class="header">
               <li><a href="/index.html">Accueil</a></li>
               <li><a href="/boutique.html">Boutique</a></li>
-              <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+              <li><a href="#" onclick="ouvrirPanier()"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
             <div class="burger-menu">
               <div class="bar"></div>
@@ -52,7 +52,25 @@
                           <img src="/accueil3.jpg"/>
                         </div>
                       </div>
+                      <div class='cardbasket'>
+                        <div class="entetePanier">
+                            <span class='closePanier'  onclick="fermerPanier()">❌</span>            
+                            <h1>Votre panier</h1>
+                        </div>
+                        <div class="articles">  
+                          <ul id="articles">
+                          <!-- Ajout de la fonction panierDisplay     -->
+                          </ul>
+                        </div>     
+                        <div class="footerPanier">
+                            <h3>Montant :<span class='total'>0 €</span></h3>
+                            <div class="bouton">
+                        <button class='valide'>Valider le panier</button>
+                            <button class='empty'>Réinitialiser le panier</button>
+                        </div>
+                        </div>
           </div>
+          
       </header>
       <section>
         <div class="footer">
@@ -75,8 +93,10 @@
           </div>
         </div>
       </section>
-  </div>    
+  </div>   
+  <script src="variable.js"></script> 
     <script src="carroussel.js"></script>
     <script src="menuBurger.js"></script>
+    <script src="Panier.js"></script>
 </body>
 </html>

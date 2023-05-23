@@ -3,21 +3,51 @@
        margin: 30px 130px;
     }
 }
-@media only screen and (max-width: 1300px) {
-.titre{
-    margin-top: 50px;
-    font-size:3em;
-    z-index: 3;
+@media only screen and (max-width: 1200px) {
+  .descriptionProduits{
+    display: flex;padding-left: 0px;flex-wrap: wrap;align-items: center;justify-content: center;
+    }
+.range-container, .rangeNote, .inputSearchElement{  display: none;}
+.range-container.active, .rangeNote.active, .inputSearchElement.active{display:block;}
+.titre{font-size:3em;z-index: 3;}
+.openCategory::after,.openPrice::after, .openNote::after {
+  content: "+";
 }
-.containerChocolate{
-  padding-top: 50px;
+.openCategory.active::after,.openPrice.active::after, .openNote.active::after{
+  content : "-";
+}
+.containerSearch{
+  left : 0px;
+  width : 100%;
+  top : 0px;
+  .openCategory,.openPrice, .openNote{visibility: visible;cursor: pointer;}
+}
+#result{  padding-left: 20px;}
+.containerSearch {border: none;box-shadow: none;border-radius: none;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.searchTitle{width: 100%;text-align: center;padding: 0;margin: 0;}
+.inputSearch{ width: 100%;}
+}
+.chocoPop{
+  padding-left: 10px;
+}
+.icone{
+  padding-right: 10px;
 }
 
-}
+
+
 @media only screen and (max-width: 800px) {
-  
+.containerFooter{
+  padding: 20px;
+}
   .titre{
-top : 150px;
+top : 250px;
   }
 #carousel-container{
   height: 400px;
@@ -49,11 +79,11 @@ top : 150px;
         }
         .bodycontainer{border-radius: none;}
         .burger-menu{display: block;}
-.navbar.active{
-  display: block;
-  z-index: 5
-  ;
-}
+        .navbar.active{
+            display: block;
+            z-index: 5
+            ;
+          }
         .menu.active {
           display: flex; /* Affiche le menu principal lorsque le menu burger est activé */
           flex-direction: column;
@@ -70,12 +100,5 @@ top : 150px;
           text-align: center;
         }
       }
-        .containerSearch{
-            background: #1F1615;
-            border-radius: none;
-            left : 0px;
-            width : 100%;
-            top : 0px;
-        }
 
     

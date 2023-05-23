@@ -133,14 +133,16 @@ nav a:hover, i:hover, .panier {
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
   display: none;
+  height: 206px;
 }
 .navbar .menu {
   display: flex;
   list-style-type: none;
   display: none;
+}
+.navbar .menu a:hover, .navbar .menu i:hover {
+  color: var(--orange);
 }
 .navbar .menu li {
   margin-right: 20px;
@@ -164,7 +166,7 @@ nav a:hover, i:hover, .panier {
 
 .containerFooter {
   display: grid;
-  grid-template-columns: 3fr 3fr 1fr;
+  grid-template-columns: 3fr 3fr 2fr;
   padding: 20px 100px;
   border-style: solid;
   border-left: none;
@@ -191,7 +193,6 @@ h1 {
 }
 
 .card {
-  flex: 1 0 20%;
   list-style-type: none;
   height: auto;
   text-align: center;
@@ -207,6 +208,7 @@ h1 {
   width: 150px;
   height: 100px;
   margin: auto;
+  cursor: pointer;
 }
 
 .card button {
@@ -217,6 +219,10 @@ h1 {
   padding: 5px;
   text-align: center;
   margin: auto;
+}
+.card button:hover {
+  background: var(--choco);
+  color: var(--lightchoco);
 }
 
 .containerChocolate {
@@ -375,21 +381,21 @@ select {
 }
 
 .containerSearch {
-  min-width: 200px;
+  max-width: 300px;
   position: absolute;
-  width: 20%;
-  top: 80px;
+  top: 70px;
   left: 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: solid 1px var(--choco);
-  border-radius: 0px 13px 10px 0px;
   font-size: 1.2em;
   z-index: 2;
+}
+.containerSearch .openCategory, .containerSearch .openPrice, .containerSearch .openNote {
+  visibility: hidden;
 }
 
 .searchTitle {
   background: #664733;
-  border-radius: 0px 10px 0px 0px;
   font-weight: bold;
   margin: 0;
   padding: 30px;
@@ -400,7 +406,6 @@ select {
 .inputSearch {
   padding: 20px;
   background: rgb(191, 153, 119);
-  border-radius: 0px 0px 9px 0px;
 }
 .inputSearch label {
   padding-left: 10px;
@@ -416,19 +421,76 @@ select {
     margin: 30px 130px;
   }
 }
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
+  .descriptionProduits {
+    display: flex;
+    padding-left: 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .range-container, .rangeNote, .inputSearchElement {
+    display: none;
+  }
+  .range-container.active, .rangeNote.active, .inputSearchElement.active {
+    display: block;
+  }
   .titre {
-    margin-top: 50px;
     font-size: 3em;
     z-index: 3;
   }
-  .containerChocolate {
-    padding-top: 50px;
+  .openCategory::after, .openPrice::after, .openNote::after {
+    content: "+";
+  }
+  .openCategory.active::after, .openPrice.active::after, .openNote.active::after {
+    content: "-";
+  }
+  .containerSearch {
+    left: 0px;
+    width: 100%;
+    top: 0px;
+  }
+  .containerSearch .openCategory, .containerSearch .openPrice, .containerSearch .openNote {
+    visibility: visible;
+    cursor: pointer;
+  }
+  #result {
+    padding-left: 20px;
+  }
+  .containerSearch {
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .searchTitle {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .inputSearch {
+    width: 100%;
   }
 }
+.chocoPop {
+  padding-left: 10px;
+}
+
+.icone {
+  padding-right: 10px;
+}
+
 @media only screen and (max-width: 800px) {
+  .containerFooter {
+    padding: 20px;
+  }
   .titre {
-    top: 150px;
+    top: 250px;
   }
   #carousel-container {
     height: 400px;
@@ -483,67 +545,96 @@ select {
     text-align: center;
   }
 }
-.containerSearch {
-  background: #1F1615;
-  border-radius: none;
-  left: 0px;
-  width: 100%;
-  top: 0px;
+.cardbasket {
+  display: none;
+  height: 0;
+  width: 0;
 }
 
-.cardbasket {
-  visibility: hidden;
-  transition: 0.2s ease-in;
+.cardbasket.active {
+  display: block;
+  transition: 0.5s ease;
   height: 900px;
   width: 400px;
   background: white;
   position: absolute;
   right: 0px;
   top: 0;
-  z-index: 2;
+  z-index: 100;
   border: solid 3px var(--choco);
   border-right: none;
 }
-.cardbasket .entetePanier {
+.cardbasket.active .cardarticles {
+  padding-left: 10px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  align-items: center;
+  text-align: center;
+}
+.cardbasket.active .cardarticles .sousCardArticles {
+  width: 150px;
+}
+.cardbasket.active .cardarticles .plus, .cardbasket.active .cardarticles .moins {
+  border: solid 1px var(--choco);
+  background: var(--lightchoco);
+  color: var(--choco);
+  font-size: 15px;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+}
+.cardbasket.active .cardarticles .plus:hover, .cardbasket.active .cardarticles .moins:hover {
+  background: var(--choco);
+  color: var(--lightchoco);
+}
+.cardbasket.active .entetePanier {
   background: var(--choco);
   font-size: 1.3em;
 }
-.cardbasket .closePanier {
+.cardbasket.active .closePanier {
   font-size: 20px;
   margin: 5px;
   padding: 5px;
 }
-.cardbasket h1 {
+.cardbasket.active h1 {
   font-size: 1.5em;
   padding: 5px 0px 20px 0px;
 }
-.cardbasket .articles {
+.cardbasket.active .articles {
   padding-top: 15px;
   display: flex;
   text-align: center;
   align-items: center;
 }
-.cardbasket h2 {
+.cardbasket.active .enleverProduit {
+  font-size: 1.4em;
+  margin: 5px;
+  padding: 5px;
+}
+.cardbasket.active h2 {
   font-size: 1.1em;
   margin-left: 20px;
 }
-.cardbasket h3 {
+.cardbasket.active h3 {
   font-size: 1.1em;
 }
-.cardbasket span {
+.cardbasket.active span {
   font-size: 40px;
   cursor: pointer;
   color: red;
 }
-.cardbasket .qty {
+.cardbasket.active .qty {
   width: 30px;
   padding: 10px;
+  font-size: 1.5em;
 }
-.cardbasket img {
+.cardbasket.active img {
   height: 60px;
   width: 60px;
 }
-.cardbasket .footerPanier {
+.cardbasket.active .footerPanier {
   position: absolute;
   background: var(--lightchoco);
   font-size: 2em;
@@ -554,7 +645,7 @@ select {
   width: 398px;
   border-top: solid 2px var(--choco);
 }
-.cardbasket .footerPanier .bouton {
+.cardbasket.active .footerPanier .bouton {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -562,7 +653,7 @@ select {
   padding-top: 10px;
   align-items: center;
 }
-.cardbasket .footerPanier .bouton button {
+.cardbasket.active .footerPanier .bouton button {
   padding: 5px;
   background: var(--choco);
   color: var(--yellow);
@@ -571,44 +662,86 @@ select {
   width: 300px;
   font-size: 0.5em;
 }
-.cardbasket .total {
+.cardbasket.active .total {
   color: var(--yellow);
   font-size: 1em;
-}
-
-.cardarticles {
-  padding-left: 10px;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  width: 400px;
-  align-items: center;
-  text-align: center;
-}
-.cardarticles .sousCardArticles {
-  width: 150px;
-}
-.cardarticles .plus, .cardarticles .moins {
-  border: outset 1px red;
-  font-size: 15px;
-  border-radius: 50px;
-  height: 25px;
-  width: 25px;
-}
-.cardarticles .plus:hover, .cardarticles .moins:hover {
-  background: red;
-  color: white;
 }
 
 span {
   text-align: center;
   margin: 5px;
-  margin-left: 10px;
-  transform: translateY(-12px);
+  margin-left: 15px;
 }
 
 #articles {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.bodycontainerproduct .produits {
+  background: white;
+}
+.bodycontainerproduct .description {
+  padding: 100px 100px 100px 200px;
+}
+.bodycontainerproduct .description .descriptionProduits {
+  display: flex;
+  flex-direction: row;
+}
+.bodycontainerproduct .description .descriptionProduits img {
+  height: 300px;
+  width: auto;
+  max-width: 400px;
+  padding-right: 50px;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp .containerQte {
+  display: flex;
+  align-items: flex-start;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp button {
+  width: 150px;
+  border-radius: 10px;
+  border: solid 1px var(--orange);
+  background: var(--lightchoco);
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp button:hover {
+  background: var(--choco);
+  color: var(--lightchoco);
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp p {
+  padding: 5px;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp .plus, .bodycontainerproduct .description .descriptionProduits .descriptionSupp .moins {
+  cursor: pointer;
+  border: solid 1px var(--choco);
+  background: var(--lightchoco);
+  border-radius: 50px;
+  font-size: 15px;
+  height: 25px;
+  width: 25px;
+  padding-left: 5px;
+}
+.bodycontainerproduct .description .descriptionProduits .descriptionSupp .plus:hover, .bodycontainerproduct .description .descriptionProduits .descriptionSupp .moins:hover {
+  background: var(--choco);
+  color: var(--lightchoco);
+}
+.bodycontainerproduct .ingredients {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: var(--lightchoco);
 }/*# sourceMappingURL=index.css.map */

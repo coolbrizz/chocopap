@@ -18,7 +18,7 @@
           <ul class="header">
             <li><a href="/index.html">Accueil</a></li>
             <li><a href="/boutique.html">Boutique</a></li>
-            <li><a href="#"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="#" onclick="ouvrirPanier()"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
           </ul>
           <div class="burger-menu">
             <div class="bar"></div>
@@ -36,14 +36,14 @@
       </header>
         <section>
 <div class="containerChocolate">
-            <h1 class="fw-bold p-4">Boutique</h1>
-            <ul id="result"></ul>
+
             <div class='containerSearch'>
               <div class='searchTitle'>
                   <p>Filtrer</p>
               </div>
               <div class='inputSearch'>
-                <h3>Catégories :</h3>
+                <h3>Catégories<span class="openCategory" onclick="openCategories()"></span></h3>
+                <div class="inputSearchElement">
                   <div>
                       <label htmlFor='tous'>
                       <input type="checkbox" 
@@ -113,9 +113,9 @@
                       ></input>
                       <span> Liqueur</span></label>
                   </div>
-        
+                </div>
               <div class='inputPrice'>
-                <h3>Prix :</h3>
+                <h3>Prix<span class="openPrice" onclick="openPrice()"></span></h3>
               <div class='range-container'>
                       <form action="#">
                               <label>Prix mini :</label>
@@ -167,7 +167,8 @@
                       </form>
                       </div>
                   <div class='range'>
-                      <h3>Notes :</h3>
+                      <h3>Notes<span class="openNote" onclick="openNote()"></span></h3>
+                      <div class="rangeNote">
                       <form action="#">
                         <label >Note mini :</label>
                         <select name="noteMini" id="noteMini">
@@ -187,13 +188,16 @@
                           <option value="5">5</option>
                         </select>
                       </form>
+                    </div>
                   </div>
               </div>
               </div>
         </div>
+        <h1 class="fw-bold p-4">Boutique</h1>
+        <ul id="result"></ul>
         <div class='cardbasket'>
           <div class="entetePanier">
-              <span class='closePanier'>❌</span>            
+              <span class='closePanier' onclick="fermerPanier()">❌</span>            
               <h1>Votre panier</h1>
           </div>
           <div class="articles">  
@@ -202,16 +206,13 @@
             </ul>
           </div>     
           <div class="footerPanier">
-              <h2>Montant :<span class='total'>0 €</span></h2>
+              <h3>Montant :<span class='total'>0 €</span></h3>
               <div class="bouton">
           <button class='valide'>Valider le panier</button>
               <button class='empty'>Réinitialiser le panier</button>
           </div>
           </div>
-
       </div>
-
-
         </section>
       <footer>
         <div class="footer">
@@ -235,6 +236,7 @@
         </div>
     </footer>
   </div>    
+  <script src="variable.js"></script> 
     <script src = "index.js"></script>
     <script src = "menuBurger.js"></script>
 </body>

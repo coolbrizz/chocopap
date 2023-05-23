@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>chocoPop</title>
+        <script src="https://kit.fontawesome.com/4dad057125.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/styles/index.css">
+    </head>
+<body>
+  <div class="bodycontainer">   
+    <header>  
+             <nav >
+            <img src="/logo.png" alt="Logo choco pop" id="logo">
+              <ul class="header">
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="/boutique.html">Boutique</a></li>
+                <li><a href="#" onclick="ouvrirPanier()"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+              </ul>
+              <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+          </nav>
+          <nav class="navbar">
+            <ul class="menu">
+              <li><a href="/index.html">Accueil</a></li>
+              <li><a href="/boutique.html">Boutique</a></li>
+              <li><a href="#" onclick="ouvrirPanier()"><span class="nbArticle"></span><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+          </nav>
+        </header>
+        <section>            
+          <div class="bodycontainerproduct">
+                <div class="produits">
+              <!-- Ajout de la fonction ProductDisplay -->
+                </div>
+            </div>
+          <div class='cardbasket'>
+            <div class="entetePanier">
+                <span class='closePanier'  onclick="fermerPanier()">❌</span>            
+                <h1>Votre panier</h1>
+            </div>
+            <div class="articles">  
+              <ul id="articles">
+              <!-- Ajout de la fonction panierDisplay     -->
+              </ul>
+            </div>     
+            <div class="footerPanier">
+                <h3>Montant :<span class='total'>0 €</span></h3>
+                <div class="bouton">
+                <button class='valide'>Valider le panier</button>
+                <button class='empty'>Réinitialiser le panier</button>
+            </div>
+
+          </div>
+
+        </section>
+        <footer>
+            <div class="footer">
+              <div class="containerFooter">
+                <div class="chocoPop">
+                  <h3>Choco Pap</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia fugiat at quia consequatur reiciendis obcaecati, perspiciatis repellat. Officia, deserunt pariatur?</p>
+                </div>
+                <div class="contact">
+                  <h3>Contact</h3>
+                  <p>Adresse : 51 rue du chocolat 75000 Paris</p>
+                  <p>Téléphone : 01 23 42 67 89</p>
+                  <p>Horaires : 9h00-17h00 du Lundi au Vendredi</p>
+                </div>
+                <div class="icone">
+                  <img src="/pngegg (4).png">
+                  <img src="/pngegg (3).png">
+                  <img src="/pngegg (2).png">
+                </div>
+              </div>
+            </div>
+        </footer>
+    </div>
+    <script src="variable.js"></script> 
+    <script src="Panier.js"></script>
+    <script src="ProductDisplay.js"></script>
+    <script src="menuBurger.js"></script>
+
+</body>
+</html>
