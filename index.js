@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 //Appel du fichier JSON
+=======
+const menuBurger = document.getElementById('btn');
+const sidebar = document.getElementById('side-bar');
+const content = document.getElementById('conteneur');
+const result = document.getElementById('result')
+const body =document.getElementById('logo')
+const afficheProduit = document.getElementById('afficheProduit')
+var clickChocolate;
+let click;
+let dataChocolate = [];
+
+>>>>>>> 6e7b6a8fde809e549692dff96c9468ce0985e361
 async function fetchChocolate(){
   await fetch ("products.json")
     .then((res)=>res.json())
@@ -8,6 +21,7 @@ async function fetchChocolate(){
     nombreArticle();
     }
 
+<<<<<<< HEAD
 //Adaptation du filtre en responsive
 function openCategories(){
 openCategoryElement.classList.toggle('active');
@@ -294,6 +308,40 @@ nombreArticle();
 panierDisplay();
 location.reload();
 cardbasket.style.visibility = "visible";
+=======
+
+function chocolateDisplay(){
+result.innerHTML=
+ dataChocolate.map(
+  (chocolate)=>
+ `<li class="card">
+ <a href="/ficheproduit.html">
+ <img src=/${chocolate.image} alt="photo${chocolate.image}" id="image"></a>
+<h2> ${chocolate.title}</h2>
+<p>${chocolate.price} €</p>
+<p>Note : ${chocolate.note}</p>
+<button>Ajouter au panier</button>
+</li>`).join("");
+}  
+
+fetchChocolate();
+
+
+result.addEventListener('click',(e) =>{
+ clickChocolate = e.target;
+});
+
+window.addEventListener('load', () => {console.log("hello");
+// afficheProduit.innerHTML = `${clickChocolate}`;
+});
+
+
+menuBurger.addEventListener('click', () => {
+  menuBurger.classList.remove("toggle-btn");
+  sidebar.style.display= "block";
+  content.style.visibility="visible";
+  click = false;
+>>>>>>> 6e7b6a8fde809e549692dff96c9468ce0985e361
 })
 // Fermer le panier
 function fermerPanier(){

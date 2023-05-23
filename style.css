@@ -95,7 +95,7 @@ display : none;
 /*Mise en forme caroussel*/
 /*****************************************************************************************************/
 
-.boutique{
+.boutique a{
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -103,11 +103,17 @@ display : none;
     transform: translate(-50%,-50%);
     padding: 10px 50px;
     font-size: 2em;
-    color: #B65F28;
     background: #FFD543;
     border-radius: 50px;
     border: solid 2px var(--orange);
+    transition: 0.8s ease-in;
+    text-decoration: none;
+    color: #B65F28;
+}
 
+.boutique a:hover{
+    color: var(--choco);
+    border : solid 2px var(--choco);
 }
 
 #carouselImageChoco {
@@ -120,6 +126,7 @@ img {
     width: auto;
 }
 
+
 /******************************************************************************/
 /* mise en forme du footer */
 /*****************************************************************************/
@@ -129,7 +136,6 @@ img {
     border-radius: 0px 0px 10px 10px;
 }
 .icone{
-
     margin: auto;
 }
 .icone img{
@@ -139,7 +145,6 @@ img {
     display: grid;
     grid-template-columns: 3fr 3fr 1fr;
     padding: 20px 100px;
-
     border-style: solid;
     border-left: none;
     border-right: none;
@@ -164,8 +169,16 @@ img {
     margin-top: 50px;
     font-size:3em;
 }
+
 }
 @media only screen and (max-width: 800px) {
+    .containerSearch{
+        background: #1F1615;
+position:fixed;
+left : 0px;
+width : 100%;
+top : 0px;
+    }
     .bodycontainer{
         margin: 0px;
      }
@@ -249,6 +262,14 @@ img {
             text-decoration: none;
             color: #FFD543;
         }
+        .containerSearch{
+            background: #1F1615;
+position:fixed;
+left : 0px;
+width : 100%;
+top : 0px;
+        }
+
     }
 /*****************************************************************************************************/
     /*Mise en forme de la page boutique*/
@@ -257,20 +278,26 @@ h1{
     text-align: center;
     color: #FFD543;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3em;
 }
+
 .card{
+    flex : 1 0 20%;
+    list-style-type: none;
     width: 300px;
     height: auto;
     text-align: center;
     margin: auto;
     border: none;
-    align-items: center;
-    flex-basis : 22%;
-    padding: 20px;
+    padding: 50px 20px 80px 20px;
+    text-decoration: none;
 }
 .card img{
-width: 150px;
-height: 150px;}
+width: 250px;
+height: 150px;
+object-fit: cover;
+}
 
 .card button{
     width: 150px;
@@ -281,10 +308,15 @@ height: 150px;}
     text-align: center;
 }
 .containerChocolate{
-    padding: 0;margin: 0;
+    min-height: 800px;
     background:rgb(255, 255, 255);
     position: relative;
 
+}
+.displayProduct{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
 }
 #result{
     display: flex;
@@ -301,21 +333,74 @@ h2{
     /*Mise en forme du filtre*/
 /*****************************************************************************************************/
 .containerSearch {
+    min-width: 200px;
     position: absolute;
+    width : 20%;
     top : 150px;
     left : -40px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 200px;
+    border : solid 1px var(--choco);
+    border-radius: 13px 13px 10px 10px;
+    font-size: 1.2em;
 }
 .searchTitle{
     background: #664733;
     border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    margin: 0;padding: 30px;
+    font-size: 2em;
+    color : var(--yellow);
 }
 .inputSearch{
     padding: 20px;
     background: rgb(191, 153, 119);
+    border-radius: 0px 0px 9px 10px;
 }
-.input:checked{
-    color: #FFD543;
-    background: #1F1615;
+.containerSearch h3{
+    font-size: 1.5em;
+    padding: 10px 0px;
 }
+
+/*****************************************************************************************************/
+    /*Mise en forme des checkbox*/
+/*****************************************************************************************************/
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+input[type=checkbox] {
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    border: 1px solid var(--choco);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--choco);
+    margin:0px;
+    position: relative;
+
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+input[type=range] {
+    border-radius: 4px;
+    height: 20px;
+    width: 50px;
+    background: #fff;
+    border: 1px solid var(--choco);
+}
+select {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    outline: 0;
+    background: var(--choco);
+    color: #fff;
+    padding: 3px;
+    border-radius: 9px;
+  }
